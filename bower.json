@@ -1,0 +1,32 @@
+{
+  "name": "riot-md-checkbox",
+  "version": "0.0.0",
+  "description": "Material Design animated Checkbox input, for Riot.js", 
+  "authors": [
+    {"name": "Luke Edwards", "email": "luke@lukeed.com", "homepage": "https://lukeed.com"}
+  ],
+  "keywords": [
+    "riot",
+    "riotjs",
+    "riot-tag",
+    "riot-md-checkbox"
+  ],
+  "main": "riot-md-checkbox.tag",
+  "moduleType": [
+    "amd"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/lukeed/riot-md-checkbox/",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "riot": "^2.3.0"
+  },
+  "devDependencies": {
+  }
+}
