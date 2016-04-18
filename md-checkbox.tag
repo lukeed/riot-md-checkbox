@@ -1,4 +1,4 @@
-<riot-md-checkbox>
+<md-checkbox>
 	<p onclick="{ onClick }">Hallo hallo!</p>
 
 	<script>
@@ -13,7 +13,7 @@
 		}.bind(this));
 	</script>
 
-	<style scoped>
-		@import "riot-md-checkbox.sass";
+	<style>
+		@import "md-checkbox.sass";
 	</style>
-</riot-md-checkbox>
+</md-checkbox>

@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "repository": "https://github.com/lukeed/riot-md-checkbox",
-  "main": "riot-md-checkbox.js",
+  "main": "md-checkbox.js",
   "files": [
     "*.js",
     "*.sass",
