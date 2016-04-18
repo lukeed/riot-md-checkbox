@@ -1,6 +1,91 @@
 @import "node_modules/md-colors/src/md-colors"
 
-$text-color : md-color('blue', '500')
+$checkbox-size            : 25px
+$checkbox-border-radius   : 2px
+$checkbox-font-size       : 18px
 
-:scope p
-  color: $text-color
+$checkbox-text-color      : #5B5B5B
+$checkbox-inactive-color  : lighten(#b2b2b2, 10)
+$checkbox-active-color    : md-color('blue', '500')
+$checkbox-inner-color     : #fff
+$checkbox-error-color     : md-color('red', '700')
+
+$checkbox-transition      : all 0.25s ease-in-out
+
+=size($val)
+	width: $val
+	height: $val
+
+.md-checkbox
+  position: relative
+  display: inline-block
+  font-size: $checkbox-font-size
+  line-height: 2 * $checkbox-size - 2
+  cursor: pointer
+
+  input
+    +size(1px)
+    opacity: 0 // Hide input, but leave it available for tabbing
+    // display: none // jk
+
+    &:checked + .md-checkbox__fake::before
+      height: $checkbox-size/2
+      border-color: $checkbox-active-color
+      border-top-style: none
+      border-right-style: none
+      transform: rotate(-45deg)
+
+  // basic text label & text wrapper
+  > div
+    line-height: $checkbox-font-size
+    display: inline-block
+
+  // animated box
+  &__fake
+    position: relative
+    display: block
+    float: left
+    margin: 10px 9px 10px 10px
+    cursor: pointer
+    width: $checkbox-size
+    height: $checkbox-size
+    &::before,
+    &::after
+      position: relative
+      content: ''
+
+    &::before
+      display: block
+      z-index: 1
+      width: 100%
+      height: 100%
+      border-radius: $checkbox-border-radius
+      border: 2px solid $checkbox-inactive-color
+      transition: $checkbox-transition
+    &::after
+      position: absolute
+      top: 0
+      left: 0
+      width: 1.1 * $checkbox-size
+      height: 1.1 * $checkbox-size
+      background: $checkbox-inner-color
+      cursor: pointer
+
+  // if has extra text ('small' tag)
+  &.has__text
+    > div
+      padding-top: $checkbox-font-size/2 - 2
+    // extra label text
+    small
+      display: block
+      line-height: 15px
+      color: $checkbox-text-color
+      opacity: 0.65
+      padding-top: 2px
+
+  // error class added
+  &.with__error
+    > div, small
+      color: $checkbox-error-color
+    .md-checkbox__fake::before
+      border-color: $checkbox-error-color !important
