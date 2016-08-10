@@ -1,6 +1,7 @@
 <md-checkbox class="md-checkbox">
 	<input id="{ opts.input }" name="{ opts.input }"
-		type="checkbox" checked="{ opts.check }" onclick="{ onToggle }">
+		type="checkbox" checked="{ opts.check }"
+		onclick="{ onToggle }" onblur="{ onBlur }">
 
 	<span class="md-checkbox__fake"></span>
 
@@ -10,16 +11,31 @@
 	</div>
 
 	<script>
-		onToggle(e) {
-			if (opts.ontoggle) {
-				opts.ontoggle(e);
-			}
-			this.el.value = this.el.checked ? (opts.value || 1) : null;
-		}
+		var self = this;
 
-		this.on('mount', function () {
-			this.el = this.root.firstElementChild;
-			return this.onToggle();
-		}.bind(this));
+		self.onToggle = function (e) {
+			self.input.value = self.input.checked ? (opts.value || 1) : null;
+			if (e) {
+				opts.ontoggle && opts.ontoggle(e);
+				self.onBlur();
+			}
+		};
+
+		self.onBlur = function () {
+			self.parent.trigger('validate');
+		};
+
+		self.on('mount', function () {
+			self.input = self.root.firstElementChild;
+			return self.onToggle(); // set initial value
+		});
+
+		// reset only if self aware
+		self.reset = function () {
+			if (self.input) {
+				self.onBlur(); // clear errors
+				self.parent.trigger('reset');
+			}
+		};
 	</script>
 </md-checkbox>
