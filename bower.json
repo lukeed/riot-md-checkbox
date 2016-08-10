@@ -1,6 +1,5 @@
 {
 	"name": "riot-md-checkbox",
-	"version": "1.0.0",
 	"description": "Material Design animated Checkbox input for Riot.js",
 	"authors": [{
 		"name": "Luke Edwards",
