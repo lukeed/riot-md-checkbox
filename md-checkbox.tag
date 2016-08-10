@@ -22,8 +22,4 @@
 			return this.onToggle();
 		}.bind(this));
 	</script>
-
-	<style>
-		@import "md-checkbox.sass";
-	</style>
 </md-checkbox>
