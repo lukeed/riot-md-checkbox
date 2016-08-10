@@ -1,18 +1,13 @@
 # riot-md-checkbox
-> Material Design animated Checkbox input, for Riot.js
+
+> Material Design animated Checkbox input for [Riot.js](https://github.com/riot/riot)
 
 ![md-checkbox](https://github.com/lukeed/md-checkbox/blob/master/demo.gif)
 
-## Installation
+## Instal
 
 ```bash
-bower install riot-md-checkbox
-```
-
-or
-
-```bash
-npm install riot-md-checkbox
+bower install --save riot-md-checkbox
 ```
 
 ## Usage
@@ -31,56 +26,6 @@ npm install riot-md-checkbox
 </md-checkbox>
 ```
 
-#### Bower
-
-With Bower, you have access to the pre-compiled and non-compiled files.
-
-**Pre-compiled:**
-
-```html
-<!-- mount point -->
-<md-checkbox></md-checkbox>
-
-<!-- include riot.js only -->
-<script src="//cdn.jsdelivr.net/riot/2.3/riot.min.js"></script>
-<!-- include the precompiled js file -->
-<script src="bower_components/riot-md-checkbox/md-checkbox.js"></script>
-<!-- standard `mount()` -->
-<script>
-  riot.mount('*');
-</script>
-```
-
-**In-browser Compilation:**
-
-```html
-<!-- mount point -->
-<md-checkbox></md-checkbox>
-
-<!-- include source tag -->
-<script src="bower_components/riot-md-checkbox/md-checkbox.tag" type="riot/tag"></script>
-<!-- include riot.js and the compiler -->
-<script src="//cdn.jsdelivr.net/riot/2.3/riot+compiler.min.js"></script>
-<!-- standard `mount()` -->
-<script>
-  riot.mount('*');
-</script>
-```
-
-#### NPM
-
-A pre-compiled version, including styles, is exported as the NPM module. This means you may `require()` the module directly.
-
-```js
-// templates.js (example file)
-var riot = require('riot');
-
-require('riot-md-checkbox');
-
-riot.mount('*');
-```
-
-> **Note:** You do not need to require `riot` within the same file. However, `riot` must be loaded and accessible before your template file(s) -- a simple global will work.
 
 ## Options
 
