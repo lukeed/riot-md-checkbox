@@ -32,7 +32,8 @@
 		"tests"
 	],
 	"dependencies": {
-		"riot": "^2.3.0"
+		"riot": "^2.5.0",
+		"md-colors": "^1.0.0"
 	},
 	"devDependencies": {
 	}
